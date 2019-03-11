@@ -1,0 +1,23 @@
+---
+title: "Final Project Section 1"
+author: "Jim Wang"
+date: "3/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+chooseCRANmirror(graphics=FALSE, ind=1)
+knitr::opts_chunk$set(echo = FALSE)
+library("knitr")
+source("analysis.R")
+```
+
+## Are mass shootings getting worse in more recent years?
+#### That's a great question to ask! So, we used the **mass shooting data** and plot the trend and the change of **numbers of victims** during the mass shootings from _1990 to 2017_.
+
+
+```{r plot}
+plot_shooting
+```
+
+From that, we can see the number of the victims are getting **higher** in the recent years comparing to 1990s. The number of fatalities during the mass shooting _reached the hightest in 2015_, and the numbers of injured people as well as victims _kept going high until 2017_.
