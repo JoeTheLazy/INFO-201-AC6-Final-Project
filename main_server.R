@@ -1,3 +1,8 @@
+# INFO 201 Group AC6
+# Final Project
+#
+# Contains the server for our app.
+
 library("shiny")
 library("dplyr")
 library("ggplot2")

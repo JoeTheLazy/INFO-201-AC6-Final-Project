@@ -1,3 +1,8 @@
+# INFO 201 Group AC6
+# Final Project
+#
+# Contains the ui for our app.
+
 library("shiny")
 library("dplyr")
 library("ggplot2")
@@ -14,9 +19,11 @@ main_ui <- fluidPage(
     firearm regulation laws"), " to data concerning ", 
     strong("mass shootings in the US.")),
   
+  # Contains each section related to our critical questions.
   tabsetPanel(
     type = "tabs",
     
+    # Jimmy's Section.
     tabPanel(
       title = "Section1",
       
@@ -46,6 +53,7 @@ main_ui <- fluidPage(
         
     ),
     
+    # Frank's section.
     tabPanel(
       title = "Section2",
       
@@ -90,10 +98,12 @@ main_ui <- fluidPage(
       )
     ),
     
+    # Ayla's section.
     tabPanel(
       title = "Section3"
     ),
     
+    # Justin's section.
     tabPanel(
       title = "Section4"
     )
