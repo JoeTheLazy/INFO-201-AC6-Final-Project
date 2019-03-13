@@ -6,6 +6,10 @@
 library("shiny")
 library("dplyr")
 library("ggplot2")
+library("stringr") 
+library("tidyr")
+library("scales")
+library("lubridate")
 
 regs <- read.csv("data/raw_data.csv", stringsAsFactors = F)
 

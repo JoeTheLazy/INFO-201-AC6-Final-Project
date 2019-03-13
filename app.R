@@ -6,6 +6,10 @@
 library("shiny")
 library("dplyr")
 library("ggplot2")
+library("stringr") 
+library("tidyr")
+library("scales")
+library("lubridate")
 
 source("main_ui.R")
 source("main_server.R")
