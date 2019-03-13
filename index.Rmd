@@ -17,7 +17,7 @@ source("analysis.R")
 
 
 ```{r plot}
-plot_shooting
+get_summary_plot()
 ```
 
 From that, we can see the number of the victims are getting **higher** in the recent years comparing to 1990s. The number of fatalities during the mass shooting _reached the hightest in 2015_, and the numbers of injured people as well as victims _kept going high until 2017_.
