@@ -4,8 +4,12 @@
 # Contains functions for use in the map plots of app.
 
 library("shiny")
-library("ggplot2")
 library("dplyr")
+library("ggplot2")
+library("stringr") 
+library("tidyr")
+library("scales")
+library("lubridate")
 
 get_reg_map <- function(shootings_frame, reg_frame, input_year, reg_type) {
   new_shootings <- add_states_and_years_to_shootings(shootings_frame) %>% 
@@ -85,7 +89,7 @@ get_reg_map <- function(shootings_frame, reg_frame, input_year, reg_type) {
       title = 
         paste0("Comparing Firearm Provisions Law Presence by State to # of 
                Mass Shootings in ", input_year)
-    )
+    ) + theme(legend.position="none")
 }
 
 # Takes in a data frame representing our data on mass shootings,
