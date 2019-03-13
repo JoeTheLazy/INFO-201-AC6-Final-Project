@@ -2,8 +2,6 @@ library('tidyr')
 library('dplyr')
 library('ggplot2')
   
-View(get_summary_plot())
-
 get_summary_plot <- function() {
   shooting <- read.csv(file = "data/Mass Shootings Dataset Ver 5.csv", stringsAsFactors = FALSE) %>%
     select(Date, Fatalities, Injured, Total.victims ,Policeman.Killed)

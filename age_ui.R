@@ -1,7 +1,6 @@
 library("shiny")
 library("ggplot2")
 library("dplyr")
-library("tidyr")
 
 age_ui <- fluidPage(
   titlePanel("Comparing Presense of Firearm Provision Laws to # of Mass Shootings"),
@@ -39,7 +38,7 @@ age_ui <- fluidPage(
     
     # Contains map plot output.
     mainPanel(
-      plotOutput(outputId = "age_map")
+      plotOutput(outputId = "reg_map")
     )
     
   )
