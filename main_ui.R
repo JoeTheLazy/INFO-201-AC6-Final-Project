@@ -130,14 +130,15 @@ main_ui <- fluidPage(
     tabPanel(
       title = "Mental Health",
       
+      h3("What Is the Impact Mental Health Restrictions Have on the Number of Mass Shootings?"),
+      
       sidebarLayout(
         sidebarPanel(
           radioButtons("variable", "Display data of shootings in states:",
                        c("With Mental Health Restrictions" = "with_mental", "Without Mental Health Restrictions" = "without_mental"))),
         
         mainPanel(
-          tabsetPanel(type = "tabs",
-                      tabPanel(("Graph"), plotOutput("graph"), p(textOutput("text1")), p(textOutput("text2")))
+                    plotOutput("graph"), p(textOutput("text1")), p(textOutput("text2")))
                       
                       
                       
@@ -145,6 +146,6 @@ main_ui <- fluidPage(
         )
       )
     )
-  )
   
-)
+  
+
