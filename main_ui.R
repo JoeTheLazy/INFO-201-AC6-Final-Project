@@ -7,6 +7,8 @@ library("shiny")
 library("dplyr")
 library("ggplot2")
 
+regs <- read.csv("data/raw_data.csv", stringsAsFactors = F)
+
 main_ui <- fluidPage(
   
   titlePanel("Comparing Firearm Regulations Data to Mass Shootings Data"),
@@ -100,12 +102,48 @@ main_ui <- fluidPage(
     
     # Ayla's section.
     tabPanel(
-      title = "Section3"
+      title = "Section3",
+      
+      h3("Number of mass shootings corresponding 
+             to the number of gun regulations"),
+      
+      sidebarLayout( #set a side bar layout
+        sidebarPanel(  
+          # lables and contents for the side bar widget one
+          em("Select the state that you are interested in"),
+          selectInput(
+            inputId = "state",
+            label = "Pick a state",
+            choices = regs[1:50,'state']
+          )
+        ),    
+        
+        # specify content for the "main" Panel
+        mainPanel( 
+          plotOutput("plot")
+        )
+      )
+      
     ),
     
     # Justin's section.
     tabPanel(
-      title = "Section4"
+      title = "Section4",
+      
+      sidebarLayout(
+        sidebarPanel(
+          radioButtons("variable", "Display data of shootings in states:",
+                       c("With Mental Health Restrictions" = "with_mental", "Without Mental Health Restrictions" = "without_mental"))),
+        
+        mainPanel(
+          tabsetPanel(type = "tabs",
+                      tabPanel(("Graph"), plotOutput("graph"), textOutput("text1"), textOutput("text2"))
+                      
+                      
+                      
+          )
+        )
+      )
     )
   )
   

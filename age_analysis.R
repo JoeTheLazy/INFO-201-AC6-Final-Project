@@ -9,7 +9,7 @@ library("dplyr")
 
 get_reg_map <- function(shootings_frame, reg_frame, input_year, reg_type) {
   new_shootings <- add_states_and_years_to_shootings(shootings_frame) %>% 
-    filter(Year == input_year) %>% 
+    filter(year == input_year) %>% 
     drop_na(State) %>%
     drop_na(Latitude)
   
@@ -105,5 +105,5 @@ add_states_and_years_to_shootings <- function(shootings_frame) {
   years_vector <- unlist(years_list, use.names = F)
   years_vector <- as.numeric(years_vector)
   
-  mutate(shootings_frame, "State" = states_vector, "Year" = years_vector)
+  mutate(shootings_frame, "State" = states_vector, "year" = years_vector)
 }
