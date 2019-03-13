@@ -85,7 +85,7 @@ get_reg_map <- function(shootings_frame, reg_frame, input_year, reg_type) {
       title = 
         paste0("Comparing Firearm Provisions Law Presence by State to # of 
                Mass Shootings in ", input_year)
-    )
+    ) + theme(legend.position="none")
 }
 
 # Takes in a data frame representing our data on mass shootings,
