@@ -78,6 +78,10 @@ main_server <- function(input, output) {
     
   })
   
+  output$text3 <- renderText({
+    paste0('This graph shows the relationship between number of mass shootings and the number of laws of ',input$state, ' for each year. The size of the red circle on the graph refers to the number of mass shootings.')
+  })
+  
   output$plot <- renderPlot({
     shooting_with_y_s <- add_states_and_years_to_shootings(shootings)
     
@@ -97,13 +101,14 @@ main_server <- function(input, output) {
       shooting_with_spec_state_grouped, 
       by = "year")
     
-    law_year_state_num
-    
     ggplot(data = law_year_state_num) +
       geom_point(
         mapping = aes(x = year, y = lawtotal,size = as.integer(number_of_shootings)),
         color = "RED"
       ) +
-      scale_size_continuous(breaks = 1:5)
+      scale_size_continuous(breaks = 1:5)+
+      labs(x="Years", y="# of laws", 
+           title="# of laws and number of mass shootings for a given state each year",
+           size = "# of mass shootings")
   })
 }

@@ -104,23 +104,23 @@ main_ui <- fluidPage(
     tabPanel(
       title = "Totals",
       
-      h3("Number of mass shootings corresponding 
-             to the number of gun regulations"),
+      h3("Is there a correlation between the number of mass shootings
+         and the number of firearm provision regulations?"),
       
       sidebarLayout( #set a side bar layout
         sidebarPanel(  
           # lables and contents for the side bar widget one
-          em("Select the state that you are interested in"),
           selectInput(
             inputId = "state",
-            label = "Pick a state",
+            label = "Pick a state that you are interested in",
             choices = regs[1:50,'state']
           )
         ),    
         
         # specify content for the "main" Panel
         mainPanel( 
-          plotOutput("plot")
+          plotOutput("plot"),
+          p(textOutput("text3"))
         )
       )
       
