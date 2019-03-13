@@ -12,8 +12,8 @@ regs <- read.csv("data/raw_data.csv", stringsAsFactors = F)
 main_ui <- fluidPage(
   
   titlePanel("Comparing Firearm Regulations Data to Mass Shootings Data"),
-  
-  h3("By: (insert group member names here) "),
+
+  h3("By: Xuejiao Li, Nikolai Frank Nilsen, Zixin Wang, Justin C Woo"),
   
   hr(),
   
@@ -27,7 +27,7 @@ main_ui <- fluidPage(
     
     # Jimmy's Section.
     tabPanel(
-      title = "Section1",
+      title = "Victims",
       
       h3("Are mass shootings getting worse in more recent years?"),
       
@@ -57,7 +57,7 @@ main_ui <- fluidPage(
     
     # Frank's section.
     tabPanel(
-      title = "Section2",
+      title = "Firearm Regulations",
       
       h3("Do Certain Firearm Regulations Affect # of Mass Shootings?"),
       
@@ -102,7 +102,7 @@ main_ui <- fluidPage(
     
     # Ayla's section.
     tabPanel(
-      title = "Section3",
+      title = "Totals",
       
       h3("Number of mass shootings corresponding 
              to the number of gun regulations"),
@@ -128,7 +128,7 @@ main_ui <- fluidPage(
     
     # Justin's section.
     tabPanel(
-      title = "Section4",
+      title = "Mental Health",
       
       sidebarLayout(
         sidebarPanel(
@@ -137,7 +137,7 @@ main_ui <- fluidPage(
         
         mainPanel(
           tabsetPanel(type = "tabs",
-                      tabPanel(("Graph"), plotOutput("graph"), textOutput("text1"), textOutput("text2"))
+                      tabPanel(("Graph"), plotOutput("graph"), p(textOutput("text1")), p(textOutput("text2")))
                       
                       
                       
