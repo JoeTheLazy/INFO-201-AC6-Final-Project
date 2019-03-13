@@ -3,6 +3,8 @@
 #
 # Contains the ui for our app.
 
+library("mapproj")
+library("maps")
 library("shiny")
 library("dplyr")
 library("ggplot2")
@@ -41,13 +43,13 @@ main_ui <- fluidPage(
           
           p("That's a great question to ask! So, we used the mass shooting data 
             and plot the trend and the change of numbers of victims during the 
-            mass shootings from 1990 to 2017."),
+            mass shootings from ", strong("1990"), " to ", strong("2017.")),
           
-          p("From that, we can see the number of the victims are getting higher 
-            in the recent years comparing to 1990s. The number of fatalities 
-            during the mass shooting reached the hightest in 2015, and the 
-            numbers of injured people as well as victims kept going high until 
-            2017.")
+          p("From that, we can see the ", strong("number of the victims are getting higher"),
+            " in the recent years comparing to 1990s. The number of fatalities 
+            during the mass shooting ", strong("reached the hightest in 2015"), 
+            ", and the numbers of injured people as well as victims ", 
+            strong("kept increasing up to 2017."))
           
         ),
         

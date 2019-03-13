@@ -3,6 +3,8 @@
 #
 # Contains the code for actually running the app.
 
+library("mapproj")
+library("maps")
 library("shiny")
 library("dplyr")
 library("ggplot2")

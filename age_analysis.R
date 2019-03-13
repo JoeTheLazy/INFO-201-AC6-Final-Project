@@ -3,6 +3,8 @@
 #
 # Contains functions for use in the map plots of app.
 
+library("mapproj")
+library("maps")
 library("shiny")
 library("dplyr")
 library("ggplot2")

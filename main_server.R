@@ -3,6 +3,8 @@
 #
 # Contains the server for our app.
 
+library("mapproj")
+library("maps")
 library("shiny")
 library("dplyr")
 library("ggplot2")
